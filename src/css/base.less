@@ -1,0 +1,36 @@
+@font-family-global:Microsoft Yahei,"\5FAE\8F6F\96C5\9ED1",arial;
+@font-size-normal:12px;
+@font-size:14px;
+
+@card-yellow: #f1ca51;
+@card-blue: #5077ed;
+@card-red: #de2b2f;
+
+.transition(@property:all;@duration:1s;@function:linear;@delay:0s;) {
+  -webkit-transition: @property @duration @function @delay;
+  -moz-transition: @property @duration @function @delay;
+  -ms-transition: @property @duration @function @delay;
+  -o-transition: @property @duration @function @delay;
+  transition: @property @duration @function @delay;
+}
+.linear-gradient(@type: to bottom;@colorA;@colorB) {
+  background: -webkit-linear-gradient(@type, @colorA, @colorB);
+  background: -moz-linear-gradient(@type, @colorA, @colorB);
+  background: -ms-linear-gradient(@type, @colorA, @colorB);
+  background: -o-linear-gradient(@type, @colorA, @colorB);
+  background: linear-gradient(@type, @colorA, @colorB);
+}
+.brightness(@percent:1.1) {
+  -webkit-filter: brightness(@percent);
+          filter: brightness(@percent);
+}
+.opacity(@percent: 1;) {
+  opacity: @percent;
+  @iePercent: @percent * 100;
+  filter:alpha(opacity=@iePercent);
+}
+
+.hover-filter(){
+  .brightness(1.1);
+  .transition(all, 0.2s, ease);
+}
