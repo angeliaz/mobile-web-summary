@@ -8,16 +8,12 @@ p {
   width: 300px;
   height: 200px;
   margin-bottom: 10px;
-  // background: pink;
   border: 1px solid red;
-  // border-image: url('http://stdl.qq.com/stdl/me_center/production/28ab049ceddee3a22cb2564e1e44f47d.png') 20% 20% stretch;
+  /*  border-image: url('http://stdl.qq.com/stdl/me_center/production/28ab049ceddee3a22cb2564e1e44f47d.png') 20% 20% stretch; */
 }
-.test1 {
+.ignore {
   width: 300px;
   height: 200px;
-  margin-bottom: 10px;
-  background: pink;
-  border: 0.5px solid red;
 }
 .test2 {
   width: 300px;
@@ -34,13 +30,11 @@ p {
     border: 1px solid red;
     color: red;
     height: 200%;
-    -webkit-transform-origin: left top;
     transform-origin: left top;
-    -webkit-transform: scale(0.5);
     transform: scale(0.5);
     pointer-events: none; /* 防止点击触发 */
     box-sizing: border-box;
-    @media screen and (min-device-pixel-ratio: 3),(-webkit-min-device-pixel-ratio:3){
+    @media screen and (min-device-pixel-ratio: 3){
       width: 300%;
       height: 300%;
       -webkit-transform: scale(0.33);

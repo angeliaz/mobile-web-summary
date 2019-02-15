@@ -81,7 +81,8 @@ const config = {
               sourceMap: true
             }
           }, 
-          {loader: 'postcss-loader'}, {loader: 'less-loader'}
+          {loader: 'less-loader'},
+          {loader: 'postcss-loader'} 
         ], // load从右向左加载
         // include: [resolve('src')],
       },

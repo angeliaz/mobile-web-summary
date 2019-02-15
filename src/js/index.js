@@ -1,5 +1,6 @@
 import promise from './promise/promise.js';
 import '../css/main.less';
+import '../css/index.css';
 
 // addImage.js
 /* let smallImg = document.createElement('img')
