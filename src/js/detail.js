@@ -107,7 +107,7 @@ function findMax4(str) {
   // return arr.getMost();
 }
 
-const str = 'this is a test 222222 ts project. skajdf; 234222sldjfwel p'
+const str = 'this is a test 222222 ts project. skajdf; 234222sdfadssldjfwel p'
 
 const reducer = (accumulator, currentValue, b, c) => {
   let obj = {};
