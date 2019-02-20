@@ -8,5 +8,36 @@
 </head>
 <body>
   <p>test121</p>
+  <div class="out">
+    <div class="inner1">
+      <div class="rect"></div>
+    </div>
+  </div>
+
+  <div class="search-box">
+    <input type="text" placeholder="input a value">
+    <button></button>
+  </div>
+
+  <div id="app">
+    <input type="text" id="txt">
+    <p id="show-txt"></p>
+  </div>
+  
+  <script>
+    window.name = 'test';
+    function AA(params) {
+      this.name = 123
+    }
+    AA.prototype.getA = function (params) {
+      console.log(1, this);
+      console.log(2, this.name)
+      return this.name + 1
+    }
+    let a = new AA()
+    let funcA = a.getA
+    // a.getA()
+    funcA()
+  </script>
 </body>
 </html>

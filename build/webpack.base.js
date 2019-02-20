@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const path = require('path');
 const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
@@ -12,8 +14,47 @@ const merge = require('webpack-merge');
 
 const glob = require('glob');
 
+function async1(params) {
+  return new Promise((resolve) => {
+    console.log(11111, 'Promise async')
+    // resolve();
+    setTimeout(() => {
+      resolve();
+    }, 0);
+  });
+}
 
-console.log(22222, process.env.NODE_ENV);
+setImmediate(() => {
+  console.log(22222, 'setImmediate');
+});
+
+setTimeout(() => {
+  console.log(11111, 'settimeout');
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log(111111111, 'promise1');
+}).then(() => {
+  console.log(111111111, 'promise2');
+});
+
+async1().then(res => {
+  console.log(11111, 'async1');
+});
+
+setImmediate(() => {
+  console.log(111111111, 'setImmediate');
+});
+
+process.nextTick(() => {
+  console.log(111111111, 'nextTick');
+});
+
+console.log(111111111, 'end');
+for (let i = 0; i < 1000; i++) {
+  let a = 1;
+}
+console.log(111111111, 'end other');
 
 function resolve(dir) {
   return path.resolve(__dirname,  dir);
