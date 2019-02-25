@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Promise</title>
+  <script>
+    window.addEventListener('error', function (message, source, lineno, colno, error) {
+      console.log('~~~error', message, source, lineno, colno, error)
+    })
+    window.onerror = function(message, source, lineno, colno, error) { console.log('error--', message, source, lineno, colno, error) };
+  </script>
 </head>
 <body>
   <p>test121</p>
@@ -24,6 +30,7 @@
     <p id="show-txt"></p>
   </div>
   
+  <img src="http://stdl.qq.com/stdl/me_center/production/34501103fd6d2c7c8e39d11a099bed1.png" alt="">
   <script>
     window.name = 'test';
     function AA(params) {

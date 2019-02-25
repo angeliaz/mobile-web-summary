@@ -1,4 +1,5 @@
 import '../css/detail.css';
+import main from './main.js';
 
 // 找到字符串中重复次数最多的字符
 function findMax(str) {
@@ -107,7 +108,7 @@ function findMax4(str) {
   // return arr.getMost();
 }
 
-const str = 'this is a test 222222 ts project. skajdf; 234222sdfadssldjfwel p'
+const str = 'this is a test 222222 ts project. skajdf; 222sldjfwel p'
 
 const reducer = (accumulator, currentValue, b, c) => {
   let obj = {};
@@ -143,7 +144,7 @@ function findMaxSubArr(arr) {
 // console.log('maxsubarr', findMaxSubArr([1, -2, 3, 10, -4, 7, 2, -5]));
 
 // 输出结果
-console.log('begin');
+/* console.log('begin');
 setTimeout(() => {
   console.log('settimeout 1')
   Promise.resolve().then( () => {
@@ -155,7 +156,7 @@ setTimeout(() => {
     console.log('promise 2');
   })
 }, 0);
-console.log('end');
+console.log('end'); */
 
 /**
  * 类数组转成数组
@@ -264,7 +265,7 @@ const imitateReduceMap1 = function (fn, thisArg) {
 }
 
 console.log('imitateMap', arr1, arr1.imitateMap(function(item) {
-  console.log('imitateMap this', this)
+  // console.log('imitateMap this', this)
   return item + 1
 }, { msg: 'mapping' }) )
 console.log('imitateReduceMap', [ 1, 2, 3 ].imitateReduceMap(x => x + 1));
@@ -315,5 +316,11 @@ document.addEventListener('keyup', function(e){
   obj.txt = e.target.value
 })
 
+/* setTimeout(() => {
+  a.push(2);
+}, 1000);
+
+const b = undefined;
+b.a = 1; */
 
 
