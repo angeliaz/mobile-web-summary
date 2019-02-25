@@ -7,6 +7,7 @@
  * @param target: target = numbers[index1] + numbers[index2]
  * @return: [index1, index2] (index1 < index2)
  */
+
 const twoSum = function(numbers, target) {
 	let index2;
 	for (let i = 0; i < numbers.length - 1; i++) {
