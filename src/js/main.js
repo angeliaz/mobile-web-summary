@@ -7,7 +7,6 @@
  * @param target: target = numbers[index1] + numbers[index2]
  * @return: [index1, index2] (index1 < index2)
  */
-
 const twoSum = function(numbers, target) {
 	let index2;
 	for (let i = 0; i < numbers.length - 1; i++) {
@@ -277,33 +276,67 @@ function getTree(data) {
 
 
 const treelist =   [{
-        id: 1,
-        name: '1',
-        parentId:  null
-    }, {
-        id: 2,
-        name: '1-1',
-        parentId: 1
-    }, {
-        id: 3,
-        name: '1-1-1',
-        parentId: 2
-    }, {
-        id: 4,
-        name: '1-2',
-        parentId: 1
-    }, {
-        id: 5,
-        name: '1-2-2',
-        parentId: 4
-    }, {
-        id: 6,
-        name: '1-1-1-1',
-        parentId: 3
-    }, {
-        id: 7,
-        name: '2',
-    }]
+      id: 1,
+      name: '1',
+      parentId:  null
+  }, {
+      id: 2,
+      name: '1-1',
+      parentId: 1
+  }, {
+      id: 3,
+      name: '1-1-1',
+      parentId: 2
+  }, {
+      id: 4,
+      name: '1-2',
+      parentId: 1
+  }, {
+      id: 5,
+      name: '1-2-2',
+      parentId: 4
+  }, {
+      id: 6,
+      name: '1-1-1-1',
+      parentId: 3
+  }, {
+      id: 7,
+      name: '2',
+  }]
 
 
 console.log('fnSetTreeData', getTree(treelist))
+
+function getNum(str, jinzhi, cutNum) {
+  let decimal = 0;
+  let letters = str.split('');
+  for (let i = 0; i < letters.length; i++) {
+    decimal += (letters[i].charCodeAt(0) - 64) * Math.pow(jinzhi, (letters.length - i - 1)) - cutNum;
+  }
+  return decimal;
+}
+getNum('AA', 16, 1);
+
+const target = [];
+function getPailie(arr, n, res) {
+  for (let i = 0; i < arr[i].length; i++) {
+    if (n === 0) {
+      res = [];
+    }
+    console.log(n, i, arr[i].length, res);
+    if (n < arr.length) {
+      let _res = res.slice();
+      _res.push(arr[n][i]);
+      console.log(_res);
+      if (n === arr.length - 1) {
+        // console.log(_res);
+        target.push(_res);
+      } else {
+        getPailie(arr, n + 1, _res);
+      }
+    }
+  }
+}
+getPailie([[1,2], [3,4], [5,6]], 0);
+
+

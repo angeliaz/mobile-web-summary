@@ -9,7 +9,6 @@ const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const terserPlugin = require('terser-webpack-plugin');
 const optimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const bundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const { VueLoaderPlugin } = require('vue-loader');
 const merge = require('webpack-merge');
 const glob = require('glob');
 
@@ -60,14 +59,6 @@ const config = {
   // loader 模块和资源的转换器
   module: {
     rules: [
-      // vue
-      {
-        test:/\.(vue)$/,
-        loader: 'vue-loader',
-        options: {
-
-        }
-      },
       // 处理我们在html 中引入图片的问题
       {
         test:/\.(htm|html)$/,
@@ -113,7 +104,6 @@ const config = {
   plugins: [
     // new bundleAnalyzerPlugin(),
     // 清除文件
-    new VueLoaderPlugin(),
     new cleanWebpackPlugin(
       [resolve('../dist')], {
         root: path.resolve(__dirname, '../'),

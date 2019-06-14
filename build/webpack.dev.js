@@ -2,8 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base');
-
-console.log(11111, process.env.NODE_ENV);
+console.log('~MOCK', process.env.MOCK);
 
 module.exports = merge(baseWebpackConfig, {
   mode: 'development',

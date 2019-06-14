@@ -1,32 +1,23 @@
-import promise from './promise/promise.js';
-import '../css/main.less';
-import '../css/index.css';
+import Vue from 'vue';
+import app from '../App.vue';
 
-// addImage.js
-/* let smallImg = document.createElement('img')
-// 必须 require 进来
-smallImg.src = require('../images/newer.png')
-// console.log(smallImg)
-document.body.appendChild(smallImg) */
+const vm = new Vue({
+  el: '#app',
+  data: {
+    test: 1
+  },
+  render: (h) => h(app),
+  components: {app}
+});
 
-/* let bigImg = document.createElement('img')
-bigImg.src = require('../images/big.jpeg')
-document.body.appendChild(bigImg) */
+Vue.filter('my-filter', function (value) {
+  // 返回处理后的值
+  return value + 1;
+});
 
-let a = 23333;
+const myFilter = Vue.filter('my-filter')
 
-function user(params) {
-  console.log('user');
-}
-
-// promise.dbFuc();
-
-// 按需加载
-document.getElementById('btn').onclick = () => {
-  import(/* webpackChunkName: 'dynamic1' */'./dynamic.js')
-  .then(module => {
-  console.log(module.test('dynamic11111'))
-  })
-}
-
-console.log('index1111');
+console.log(myFilter(1));
+console.log(vm._self, vm.$children, vm.$parent, vm.$root);
+console.log(vm.$options);
+console.log(vm.$data);
